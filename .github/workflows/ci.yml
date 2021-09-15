@@ -15,4 +15,7 @@ jobs:
       - run: npm ci
       - run: npm test
       - name: Create Manual Approval Issue
+        id: manual
         uses: toppulous/create-manual-approval-issue@v1
+        with:
+          label: dev-approval
