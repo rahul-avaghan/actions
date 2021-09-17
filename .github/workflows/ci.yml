@@ -5,6 +5,12 @@ on:
     branches:
       - main
 jobs:
+  cancel-runs:
+    # Prevent forks from running this to be nice
+    if: github.repository == 'main'
+    runs-on: ubuntu-latest
+    steps:
+        - uses: n1hility/cancel-previous-runs@v2
   build:
     runs-on: ubuntu-latest
     needs: cancel
